@@ -40,8 +40,11 @@ http://localhost:5173
 
 Ти маєш побачити:
 
-<img width="271" height="168" alt="image" src="https://github.com/user-attachments/assets/d0f9a301-2f90-4db9-bedf-3fb42cbb39a9" />
+Форму входу/реєстрації, а після входу:
 
+<img width="216" height="109" alt="image" src="https://github.com/user-attachments/assets/ed8d78bb-1c95-4eea-b599-240cf0e82c8d" />
+
+з робочою кнопкою Log out
 
 якщо **раптом щось не спрацює**, тоді потрібно окремо встановити залежності:
 ```bash
@@ -61,11 +64,20 @@ cd vulnerabilities-backend
 npm install
 ```
 Запуск:
+
+**Запустити сервер mongoDB**
+
+Потім в консолі:
 ```bash
 node server.js
 ```
 Очікуваний результат:
 
+В консолі:
+```
+Server listening on port 3000
+MongoDB connected
+```
 В браузері:
 http://localhost:3000
 
