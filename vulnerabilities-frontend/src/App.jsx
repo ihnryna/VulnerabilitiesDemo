@@ -2,6 +2,8 @@ import './App.css'
 import {useEffect, useState} from "react";
 import Register from "./components/Register.jsx";
 import Login from "./components/Login.jsx";
+import Welcome from "./components/Welcome.jsx";
+import MainPage from "./components/MainPage.jsx";
 
 function App() {
 
@@ -46,20 +48,14 @@ function App() {
                 onForward={() => setAuthMode("welcome")}
             />;
         } else if (authMode === "welcome") {
-            return <div className="min-h-screen flex flex-col">
-                <div className="text-center items-center justify-center">
-                    <h1 className="text-3xl text-secondary font-bold mt-20">Вітаємо Вас в нашій безпечній соцмережі!</h1>
-                    <h3 className="text-2xl font-bold mt-20">Ваш акаунт створено. Перезавантажте сторінку та увійдіть</h3>
-                </div>
-            </div>;
+            return <Welcome />;
         }
     }
+    console.log(user);
 
     return (
         <>
-            <h1 className="text-3xl font-bold underline">
-                Hello world!
-            </h1>
+            <MainPage user={user}/>
             <button className="btn btn-primary" onClick={handleLogout}>Log out</button>
         </>
     )

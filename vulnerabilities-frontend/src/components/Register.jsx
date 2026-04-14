@@ -56,7 +56,7 @@ export default function Register({onBack, onForward}) {
 
     return <div className="min-h-screen flex flex-col">
         <div className="text-center items-center justify-center">
-            <h1 className="text-3xl text-secondary font-bold mt-20">Вітаємо Вас в бібліотеці!</h1>
+            <h1 className="text-3xl text-secondary font-bold mt-20">Вітаємо Вас в нашій безпечній соцмережі!</h1>
         </div>
 
         <div className="flex-1 flex items-center justify-center">

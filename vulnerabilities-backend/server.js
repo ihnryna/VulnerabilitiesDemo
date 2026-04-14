@@ -2,6 +2,7 @@ import express from 'express'
 import mongoose from 'mongoose';
 import cors from 'cors';
 import userRoutes from "./routes/userRoutes.js";
+import postRoutes from "./routes/postRoutes.js";
 
 const app = express();
 const port = 3000;
@@ -14,6 +15,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/vulnerabilities-demo')
     .catch(err => console.log(err));
 
 app.use("/api/auth", userRoutes);
+app.use("/api/post", postRoutes);
 
 app.get('/', (req, res) => {
     res.send('Welcome to the server');
