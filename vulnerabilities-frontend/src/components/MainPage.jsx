@@ -39,7 +39,7 @@ export default function MainPage({user}) {
         <div className="w-full max-w-xl space-y-4">
             <PostForm user={user} onRefresh={handleRefresh}/>
             {posts.map(post => (
-                <Post key={post.id} text={post.text} userId={post.author}/>
+                <Post key={post.id} text={post.text} userId={post.author} postId={post._id} currentUserId={user.userId} onRefresh={handleRefresh}/>
             ))}
         </div>
     </div>
