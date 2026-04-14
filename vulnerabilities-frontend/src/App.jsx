@@ -4,6 +4,7 @@ import Register from "./components/Register.jsx";
 import Login from "./components/Login.jsx";
 import Welcome from "./components/Welcome.jsx";
 import MainPage from "./components/MainPage.jsx";
+import NavBar from "./components/NavBar.jsx";
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
     const handleLogin = (token) => {
         localStorage.setItem("token", token);
         const payload = JSON.parse(atob(token.split('.')[1]));
+        console.log(payload);
         setUser(payload);
         setIsAuth(true);
     };
@@ -55,8 +57,9 @@ function App() {
 
     return (
         <>
+            <NavBar user={user}
+                    onLogout={handleLogout}/>
             <MainPage user={user}/>
-            <button className="btn btn-primary" onClick={handleLogout}>Log out</button>
         </>
     )
 }
