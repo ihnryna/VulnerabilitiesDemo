@@ -52,8 +52,9 @@ export const login = async (req, res) => {
     );
 
     res.cookie('token', token, {
-        httpOnly: false,
-        secure: false
+        httpOnly: true,
+        secure: false,
+        sameSite: 'Strict' //for security from csrf
     });
     res.json({ token, message: "Logged in successfully", user: { name: user.name, id: user._id } });
 };
