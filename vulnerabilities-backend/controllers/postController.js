@@ -2,8 +2,10 @@ import Post from "../models/post.js";
 
 export const create = async (req, res) => {
     try {
-        console.log(req.body);
-        const newPost = new Post(req.body);
+        const newPost = new Post({
+            text: req.body.text,
+            author: req.user.userId
+        });
         await newPost.save();
         res.status(200).json({message: "Post created successfully."});
     } catch (e) {
