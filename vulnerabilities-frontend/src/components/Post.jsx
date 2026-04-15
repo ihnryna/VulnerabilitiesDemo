@@ -1,5 +1,5 @@
 import api from "../api/axios.js";
-import {useEffect, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 
 export default function Post({userId, text, postId, currentUserId, onRefresh}) {
     const [username, setUsername] = useState("");
@@ -16,6 +16,14 @@ export default function Post({userId, text, postId, currentUserId, onRefresh}) {
         fetchUser();
     }, [userId]);
 
+    // небезпека початок
+    /*const ref = useRef();
+
+    useEffect(() => {
+        ref.current.innerHTML = text;
+    }, [text]);*/
+    // небезпека кінець
+
     const handleDelete = async () => {
         await api.delete("/post/delete/" + postId);
         onRefresh();
@@ -24,6 +32,7 @@ export default function Post({userId, text, postId, currentUserId, onRefresh}) {
     return <div className="card card-border bg-base-100">
         <div className="card-body">
             <h2 className="card-title">{username}</h2>
+            {/* небезпека <p ref={ref}></p>*/}
             <p>{text}</p>
             <div className="card-actions justify-end">
                 {(currentUserId === userId) && <button className="btn btn-sm btn-error" onClick={handleDelete}>Delete</button>}
